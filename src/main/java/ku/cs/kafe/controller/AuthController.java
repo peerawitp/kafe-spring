@@ -2,7 +2,6 @@ package ku.cs.kafe.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -21,7 +20,7 @@ public class AuthController {
                          HttpServletResponse response,
                          Authentication auth) {
 
-        if (auth != null){
+        if (auth != null) {
             new SecurityContextLogoutHandler()
                     .logout(request, response, auth);
         }

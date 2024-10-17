@@ -1,8 +1,8 @@
 package ku.cs.kafe.service;
 
 import ku.cs.kafe.entity.Category;
-import ku.cs.kafe.request.CategoryRequest;
 import ku.cs.kafe.repository.CategoryRepository;
+import ku.cs.kafe.request.CategoryRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

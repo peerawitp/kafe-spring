@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class SignupRequest {
     @NotBlank
-    @Size(min=4, message = "Username must have at least 4 characters")
+    @Size(min = 4, message = "Username must have at least 4 characters")
     private String username;
 
     @NotBlank

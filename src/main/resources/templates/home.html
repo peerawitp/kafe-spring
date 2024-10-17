@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org"
-    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Kafe Web Application</title>
-    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:href="@{/css/bootstrap.min.css}" th:rel="stylesheet">
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     <p><span th:text="${greeting}"></span></p>
 
-    <div id="success-msg" class="alert alert-success"
+    <div class="alert alert-success" id="success-msg"
          th:if="${confirmOrder}">
         Your order has been successfully submitted !
     </div>

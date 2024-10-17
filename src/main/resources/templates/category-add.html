@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kafe Application</title>
-    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:href="@{/css/bootstrap.min.css}" th:rel="stylesheet">
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
@@ -12,15 +12,15 @@
 <div class="container w-50 p-3">
     <h1 class="display-5">Add Category</h1>
 
-    <form action="#" th:action="@{/categories/add}" method="POST"
+    <form action="#" method="POST" th:action="@{/categories/add}"
           th:object="${categoryRequest}">
         <div class="mb-3">
             <label for="inputName">Category Name</label>
-            <input id="inputName" type="text" class="form-control"
-                   th:field="*{name}">
-            <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            <input class="form-control" id="inputName" th:field="*{name}"
+                   type="text">
+            <div class="alert alert-warning" th:errors="*{name}" th:if="${#fields.hasErrors('name')}"></div>
         </div>
-        <button id="submit-button" type="submit" class="btn btn-primary">Add Category</button>
+        <button class="btn btn-primary" id="submit-button" type="submit">Add Category</button>
     </form>
 </div>
 

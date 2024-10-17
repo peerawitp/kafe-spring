@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kafe Application</title>
-    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link th:href="@{/css/bootstrap.min.css}" th:rel="stylesheet">
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
 
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
-        <tr style="text-align: center; vertical-align: top; " class="table-secondary">
+        <tr class="table-secondary" style="text-align: center; vertical-align: top; ">
             <th>Drink</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -22,19 +22,22 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:if="${cart ne null}" th:each="item : ${cart.items}" >
+        <tr th:each="item : ${cart.items}" th:if="${cart ne null}">
             <td th:text="${item.menu.name}"></td>
-            <td style="text-align: right" th:text="${#numbers.formatDecimal(item.menu.price, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td style="text-align: right"
+                th:text="${#numbers.formatDecimal(item.menu.price, 0, 'COMMA', 2, 'POINT')}"></td>
             <td style="text-align: right" th:text="${item.quantity}"></td>
-            <td style="text-align: right" th:text="${#numbers.formatDecimal(item.getSubtotal(), 0, 'COMMA', 2, 'POINT')}"></td>
+            <td style="text-align: right"
+                th:text="${#numbers.formatDecimal(item.getSubtotal(), 0, 'COMMA', 2, 'POINT')}"></td>
         </tr>
         </tbody>
     </table>
 
-    <p th:if="${cart ne null}" style="text-align: right">Total: <span th:text="${#numbers.formatDecimal(cart.getTotal(), 1, 'COMMA', 2, 'POINT')}"></span> Bahts</p>
+    <p style="text-align: right" th:if="${cart ne null}">Total: <span
+            th:text="${#numbers.formatDecimal(cart.getTotal(), 1, 'COMMA', 2, 'POINT')}"></span> Bahts</p>
 
-    <form action="#" th:action="@{/orders}" method="POST">
-        <button id="submit-button" type="submit" class="btn btn-primary">Submit Order</button>
+    <form action="#" method="POST" th:action="@{/orders}">
+        <button class="btn btn-primary" id="submit-button" type="submit">Submit Order</button>
     </form>
 </div>
 </body>
